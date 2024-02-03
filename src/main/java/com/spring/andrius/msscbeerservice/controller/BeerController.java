@@ -1,6 +1,7 @@
 package com.spring.andrius.msscbeerservice.controller;
 
 import com.spring.andrius.msscbeerservice.web.model.BeerDto;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,12 +20,12 @@ public class BeerController {
     }
 
     @PostMapping
-    public ResponseEntity<BeerDto> saveBeer(@RequestBody BeerDto beerDto) {
+    public ResponseEntity<BeerDto> saveBeer(@Valid @RequestBody BeerDto beerDto) {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping("{beerId}")
-    public ResponseEntity<BeerDto> updateBeerById(UUID beerId, @RequestBody BeerDto beerDto) {
+    public ResponseEntity<BeerDto> updateBeerById(UUID beerId, @Valid @RequestBody BeerDto beerDto) {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
