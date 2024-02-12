@@ -15,7 +15,7 @@ import java.util.UUID;
 public class BeerController {
 
     @GetMapping("{beerId}")
-    public ResponseEntity<BeerDto> getBeerById(UUID beerId) {
+    public ResponseEntity<BeerDto> getBeerById(@PathVariable UUID beerId) {
         return new ResponseEntity<>(BeerDto.builder().build(), HttpStatus.OK);
     }
 
@@ -25,7 +25,7 @@ public class BeerController {
     }
 
     @PutMapping("{beerId}")
-    public ResponseEntity<BeerDto> updateBeerById(UUID beerId, @Valid @RequestBody BeerDto beerDto) {
+    public ResponseEntity<BeerDto> updateBeerById(@PathVariable UUID beerId, @Valid @RequestBody BeerDto beerDto) {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
