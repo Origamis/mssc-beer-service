@@ -53,7 +53,7 @@ class BeerControllerTest {
                 .andExpect(status().isNoContent());
     }
 
-    private BeerDto getValidBeerDto() {
+    private static BeerDto getValidBeerDto() {
         return BeerDto.builder()
                 .beerName("Corona")
                 .beerStyle(BeerStyle.ALE)
